@@ -1,0 +1,165 @@
+% A sample beamer presentation showing 
+% what the UNCMath theme looks like.
+%
+% Key features of the template:
+%
+% - Little excess colors
+% - Using cleaner itemize/enumerate (no "spheres" or "balls")
+% - Simple color scheme; shades of "Carolina blue", grayscale
+% - small UNC logo in upper right of every slide.
+% - removal of some of the ugly default beamer things:
+% -- navigation menus
+% -- date in footer
+% -- page numbering in footer
+%
+% This is all with the purpose of improving the 
+% "usable" space with beamer, and removing 
+% the doodads that most people never 
+% use or look at when they present or 
+% watch someone with a beamer presentation.
+%
+% First version created by Manuchehr Aminian, April 2017.
+% Feel free to modify and share, make suggestions.
+% 
+% There's no need to credit me, but it would 
+% make me happy to know that people used it. 
+% Feel free to buy me food or drinks, though.
+%
+
+\documentclass{beamer}
+
+\usepackage{graphicx}
+%\usepackage{epstopdf}
+
+% Import the UNCMath theme.
+\usetheme{UNCMath}
+
+\logo{
+\includegraphics[height=3em]{oldwell_cmyk}
+}
+
+% A macro for making the title frame.
+% Removes the bottom bar and logo temporarily.
+% If you don't want these in other frames, 
+% you could try mimicking this.
+\newcommand{\titleframe}{
+{
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\begin{frame}
+\titlepage
+\end{frame}
+}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Information for the title frame.
+%
+\title{A Very Important Mathematical Problem}
+\subtitle{or, A Big Uncertain Data Quantification}
+\author[Manuchehr Aminian]{Manuchehr Aminian}
+\institute{University of North Carolina, Chapel Hill}
+\date{April 6th, 2017}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Start of document.
+%
+\begin{document}
+
+% This is the titleframe, do it this way 
+% so that you don't have the logo on the title page.
+\titleframe
+
+
+\begin{frame}
+\frametitle{Titular Statement}
+It is a trivial matter to demonstrate that 
+%
+\begin{equation}
+e^{i\pi}+1=0.
+\end{equation}
+%
+Here is a ``sketch" of the proof:
+\begin{enumerate}
+\item First, assume that $e^{i \theta} = \cos(\theta) + i \sin(\theta)$.
+\begin{itemize}
+\item (any third grader knows this)
+\end{itemize}
+\item Then, substitute $\theta = \pi$, and use your knowledge of trigonometric functions.
+\begin{enumerate}
+\item (this was done in second grade)
+\item (I'm really just testing how itemize and enumerate interact)
+\end{enumerate}
+\end{enumerate}
+%
+Between lists of things, some more text is added.
+%
+\begin{itemize}
+\item Test this out too
+\begin{enumerate}
+\item testing yet another interaction
+\end{enumerate}
+\item No idea what will happen
+\begin{itemize}
+\item some further unordered points go here
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+%
+\begin{frame}
+\frametitle{Here is a very long frame title which 
+will extend on to a second line. }
+Notice that the title does not run through 
+the logo. This took me a lot of suffering to sort out 
+(along with the logo positioning/behavior itself). 
+The documentation isn't that great out there.
+\vspace{1em}
+
+Another small annoyance is that ``vspace"s are needed 
+to have spaces between pieces of text.
+\vspace{1em}
+
+With all this in mind, we state a theorem.
+\begin{theorem}[A trivial statement]
+Suppose that $e^{i\theta} = \cos(\theta) + i\sin(\theta)$, 
+where $i=\sqrt{-1}$ and $\theta \in \mathbb{R}$. \\[1em]
+Then $e^{i\pi}+1=0$.
+\end{theorem}
+\end{frame}
+%
+\begin{frame}
+If you don't include a frame title, there won't be a horizontal 
+rule included, but the logo will still show. 
+If you don't want the logo in a frame like this 
+either, you need to mimick the behavior done with the 
+title page macro defined in the source file.
+\end{frame}
+%
+\begin{frame}
+\frametitle{Here's the UNC logo}
+
+\begin{itemize}
+\item I've included the Old Well logo here, 
+because we all love our university very much. 
+\item Keep in mind 
+that you \textbf{need} to have the file \texttt{oldwell\_cmyk.eps} 
+in the same directory as your \texttt{.tex} file for the 
+presentation to compile successfully. In principle, 
+you could use a different image.
+\item The Old Well logo is from 
+UNC's ``Downloadable Resources:"
+{\color{blue!80} \url{http://identity.unc.edu/downloadable-resources/}}
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.6\linewidth]{oldwell_cmyk}
+\end{figure}
+\end{frame}
+%
+
+\end{document}

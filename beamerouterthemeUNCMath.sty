@@ -1,0 +1,126 @@
+% Copyright 2007 by Till Tantau
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\RequirePackage{graphicx}
+\RequirePackage{tabularx}
+\RequirePackage{calc}
+
+\newlength\imageheight
+
+\mode<presentation>
+
+
+% Official Carolina Blue color in CYMK colorspace.
+\definecolor{caroblue}{cmyk}{0.6,0.19,0.01,0.04}
+
+% Footer colors 1 and 2. "fg" is font color, "bg" is background color.
+\setbeamercolor{foot1}{fg=black,bg=caroblue!50}
+\setbeamercolor{foot2}{fg=black,bg=caroblue!10}
+
+\setbeamercolor*{author in head/foot}{parent=palette tertiary}
+\setbeamercolor*{title in head/foot}{parent=palette secondary}
+\setbeamercolor*{date in head/foot}{parent=palette primary}
+
+\setbeamercolor*{section in head/foot}{parent=palette tertiary}
+\setbeamercolor*{subsection in head/foot}{parent=palette primary}
+
+% Title page
+\defbeamertemplate*{title page}{UNCMath theme}
+{
+  \centering
+  \usebeamerfont{title}\inserttitle\par
+  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \bigskip
+%
+  \textcolor{caroblue}{\rule{0.8\textwidth}{0.05em}}\\
+%
+  \bigskip
+%
+  \usebeamerfont{author}\insertauthor\par
+%
+  \bigskip
+%
+  \usebeamerfont{institute}\insertinstitute\par
+  \usebeamerfont{date}\insertdate\par
+  \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+}
+
+% Blank headline, but add a small vertical space.
+\defbeamertemplate*{headline}{UNCMath theme}
+{
+     \vspace{1.5em}
+     \begin{tabularx}{\textwidth}{@{}X@{}r@{}r@{}}
+          \hfill & \insertlogo & \hspace{1.5em}
+     \end{tabularx}
+     %
+     \settoheight\imageheight{\insertlogo}
+     \vspace{-\imageheight}
+%     \vspace{2em}
+}
+
+\defbeamertemplate*{frametitle}{UNCMath theme}
+{%
+    \ifx\insertframetitle\@empty
+%        \hfill{0.78\textwidth}\
+%        \includegraphics[width=0.18\textwidth,keepaspectratio,valign=t]{oldwell_cmyk}\
+    \else
+%        \begin{tabularx}{\textwidth}{@{}X r@{}}%
+%        \usebeamerfont{frametitle}\insertframetitle & \insertlogo%
+        \begin{tabularx}{0.75\textwidth}{@{}X@{}}%
+          \usebeamerfont{frametitle}\insertframetitle
+        \end{tabularx}\
+        %
+        \vphantom{g}% To avoid fluctuations per frame
+        %    \rule{\widthof{\insertframetitle}+1em}}{0.5mm}
+        \vspace{-0.1em} % Manually pull up the \rule.
+        \textcolor{caroblue}{\rule{0.75\linewidth}{0.05em}}
+    \fi
+}
+
+% Clean up the footer. Only have name and presentation title.
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{foot1}%
+	\usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+%
+  \begin{beamercolorbox}[wd=.666666\paperwidth,ht=2.25ex,dp=1ex,right]{foot2}%
+	\usebeamerfont{title in head/foot}\insertshorttitle~~
+  \end{beamercolorbox}%
+% If you really really want slide numbers, uncomment the lines
+% Starting from "\begin{beamercolorbox}" to "\end{beamercolorbox}",
+% and modify the wd=... for all three of these to fit.
+%
+%  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{foot3}%
+%	\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+
+%#turning the next line into a comment, erases the frame numbers
+	%\insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+
+%  \end{beamercolorbox}
+  }%
+  \vskip0pt%
+}
+
+
+% Kill off other template parts just in case.
+\setbeamertemplate{sidebar canvas left}{}
+\setbeamertemplate{sidebar left}{}
+
+\setbeamertemplate{sidebar canvas right}{}
+\setbeamertemplate{sidebar right}{}
+
+\setbeamersize{text margin left=1em,text margin right=1em}
+
+% Remove beamer navigation buttons.
+\beamertemplatenavigationsymbolsempty
+
+\mode<all>
