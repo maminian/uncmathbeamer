@@ -32,7 +32,12 @@
 %\usepackage{epstopdf}
 
 % Import the UNCMath theme.
+% UNC is the default color theme.
 \usetheme{UNCMath}
+
+% Uncomment to use a different color scheme.
+%\definecolor{darkpurple}{rgb}{0.2,0,0.2}
+%\setbeamercolor*{structure}{fg=black,bg=darkpurple}
 
 \logo{
 \includegraphics[height=3em]{oldwell_cmyk}
@@ -57,11 +62,11 @@
 %
 % Information for the title frame.
 %
-\title{A Very Important Mathematical Problem}
-\subtitle{or, A Big Uncertain Data Quantification}
+\title{Another Mathematical Problem}
+\subtitle{Subtitle Goes Here}
 \author[Manuchehr Aminian]{Manuchehr Aminian}
 \institute{University of North Carolina, Chapel Hill}
-\date{April 6th, 2017}
+\date{April 30th, 2017}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -75,60 +80,66 @@
 
 
 \begin{frame}
+\frametitle{Changelog}
+\begin{itemize}
+\item Bullets points are now gray.
+\item Theme files cleaned up and organized to fit 
+the spirit of the Beamer style file structure.
+\item Color schemes are now easily swappable by 
+setting the \texttt{structure} color in the header 
+of the \texttt{.tex} file 
+(an example is given in the comments of this 
+presentation).
+\item Some beamer elements have been integrated in 
+to the color scheme.
+\item A few minor tweaks were done to spacing.
+\item I still don't know how I feel about the ``infoline" 
+footer. Pretty ugly, but it adds some essential color 
+right now, and I don't know what I would replace it with 
+to fit this role.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
 \frametitle{Titular Statement}
-It is a trivial matter to demonstrate that 
+Here is another equation:
 %
 \begin{equation}
-e^{i\pi}+1=0.
+\int_{-1}^1 \frac{1}{\sqrt{1-x^2}} dx = \pi.
 \end{equation}
-%
-Here is a ``sketch" of the proof:
+
 \begin{enumerate}
-\item First, assume that $e^{i \theta} = \cos(\theta) + i \sin(\theta)$.
-\begin{itemize}
-\item (any third grader knows this)
-\end{itemize}
-\item Then, substitute $\theta = \pi$, and use your knowledge of trigonometric functions.
-\begin{enumerate}
-\item (this was done in second grade)
-\item (I'm really just testing how itemize and enumerate interact)
+\item hmm...
+    \begin{enumerate}
+    \item item
+    \end{enumerate}
+\item ok
+    \begin{itemize}
+    \item Now the bullets are gray.
+    \end{itemize}
 \end{enumerate}
-\end{enumerate}
-%
-Between lists of things, some more text is added.
-%
-\begin{itemize}
-\item Test this out too
-\begin{enumerate}
-\item testing yet another interaction
-\end{enumerate}
-\item No idea what will happen
-\begin{itemize}
-\item some further unordered points go here
-\end{itemize}
-\end{itemize}
 
 \end{frame}
 %
 \begin{frame}
 \frametitle{Here is a very long frame title which 
 will extend on to a second line. }
-Notice that the title does not run through 
-the logo. This took me a lot of suffering to sort out 
-(along with the logo positioning/behavior itself). 
-The documentation isn't that great out there.
-\vspace{1em}
 
-Another small annoyance is that ``vspace"s are needed 
-to have spaces between pieces of text.
-\vspace{1em}
+The color theme has been streamlined and properly linked 
+to many of the beamer objects. For example, with a 
+theorem:
 
-With all this in mind, we state a theorem.
-\begin{theorem}[A trivial statement]
-Suppose that $e^{i\theta} = \cos(\theta) + i\sin(\theta)$, 
-where $i=\sqrt{-1}$ and $\theta \in \mathbb{R}$. \\[1em]
-Then $e^{i\pi}+1=0$.
+\begin{theorem}[Intermediate Value Theorem]
+Suppose $f(x) : [a,b] \to \mathbb{R}$ is a 
+continuous function, and $f(a)f(b)<0$. Then 
+there exists a point $c \in (a,b)$ satisfying 
+$f(c)=0$.
 \end{theorem}
+
+However, there are still a few ``hard-coded" colors which 
+I don't think should be tied to the color scheme. 
+Primary text color, for instance.
+
 \end{frame}
 %
 \begin{frame}
@@ -143,13 +154,12 @@ title page macro defined in the source file.
 \frametitle{Here's the UNC logo}
 
 \begin{itemize}
-\item I've included the Old Well logo here, 
-because we all love our university very much. 
-\item Keep in mind 
-that you \textbf{need} to have the file \texttt{oldwell\_cmyk.eps} 
-in the same directory as your \texttt{.tex} file for the 
-presentation to compile successfully. In principle, 
-you could use a different image.
+\item I've used the Old Well logo here, but you 
+can remove it or replace it with whatever you like.
+\item The motivation for this revision was to 
+make the theme less hard-coded to allow for a 
+swap to different color scheme. This is still 
+mainly a one-color theme, though.
 \item The Old Well logo is from 
 UNC's ``Downloadable Resources:"
 {\color{blue!80} \url{http://identity.unc.edu/downloadable-resources/}}

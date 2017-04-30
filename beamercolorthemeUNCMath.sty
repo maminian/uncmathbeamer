@@ -1,12 +1,65 @@
 %
+% 
+%
 \RequirePackage{color}
 
 \mode<presentation>
 
+% Carolina blue is the default color scheme.
+% It's best to override the structure color in the 
+% main body when you're using this color theme, 
+% using the same \setbeamercolor*{structure}{fg=caroblue}
+% with whatever color you prefer.
+\definecolor{caroblue}{cmyk}{0.6,0.19,0.01,0.04}
+\setbeamercolor*{structure}{bg=caroblue}
+
+
+\setbeamercolor*{palette primary}{fg=structure.fg,bg=structure.bg}
+\setbeamercolor*{palette secondary}{fg=black,bg=structure.bg!40}
+\setbeamercolor*{palette tertiary}{fg=black,bg=structure.bg!20}
+\setbeamercolor*{palette quaternary}{fg=black,bg=structure.bg!5}
+
 \setbeamercolor*{normal text}{fg=black,bg=white}
 \setbeamercolor*{alerted text}{fg=black}
 \setbeamercolor*{example text}{fg=black}
-\setbeamercolor*{structure}{fg=black}
+
+\setbeamercolor*{itemize item}{fg=black!30}
+\setbeamercolor*{enumerate item}{fg=black}
+\setbeamercolor*{itemize subitem}{parent=itemize item}
+\setbeamercolor*{itemize subsubitem}{parent=itemize item}
+\setbeamercolor*{enumerate subitem}{parent=enumerate item}
+\setbeamercolor*{enumerate subsubitem}{parent=enumerate item}
+
+
+\setbeamercolor*{subtitle}{parent=normal text}
+\setbeamercolor*{author}{parent=normal text}
+\setbeamercolor*{affiliation}{parent=normal text}
+\setbeamercolor*{date}{parent=normal text}
+\setbeamercolor*{frametitle}{parent=normal text}
+
+\setbeamercolor*{author in head/foot}{parent=palette secondary}
+\setbeamercolor*{title in head/foot}{parent=normal text}
+\setbeamercolor*{date in head/foot}{parent=normal text}
+
+\setbeamercolor*{section in head/foot}{parent=normal text}
+\setbeamercolor*{subsection in head/foot}{parent=normal text}
+
+
+\setbeamercolor*{block title}{parent=palette tertiary}
+\setbeamercolor*{block title alerted}{parent=block title}
+\setbeamercolor*{block title example}{parent=block title}
+
+\setbeamercolor*{block body}{fg=black,bg=black!5}
+\setbeamercolor*{block body alerted}{parent=block body}
+\setbeamercolor*{block body example}{parent=block body}
+
+\setbeamercolor*{separation line}{parent=palette secondary}
+\setbeamercolor*{fine separation line}{parent=palette secondary}
+
+%%%%%%%%%%%%%%%
+%
+% Relic from another theme.
+%
 
 \providecommand*{\beamer@bftext@only}{%
   \relax
@@ -23,30 +76,7 @@
 
 \setbeamerfont{alerted text}{series=\beamer@bftext@only}
 
-\setbeamercolor*{palette primary}{fg=black,bg=black!20}
-\setbeamercolor*{palette secondary}{fg=black,bg=black!25}
-\setbeamercolor*{palette tertiary}{fg=black,bg=black!30}
-\setbeamercolor*{palette quaternary}{fg=black,bg=black!35}
 
-\setbeamercolor{sidebar}{bg=black!20}
-
-\setbeamercolor*{palette sidebar primary}{fg=black}
-\setbeamercolor*{palette sidebar secondary}{fg=black}
-\setbeamercolor*{palette sidebar tertiary}{fg=black}
-\setbeamercolor*{palette sidebar quaternary}{fg=black}
-
-\setbeamercolor*{item projected}{fg=black,bg=black!20}
-
-\setbeamercolor*{block title}{fg=black,bg=black!20}
-\setbeamercolor*{block title alerted}{fg=black,bg=black!20}
-\setbeamercolor*{block title example}{fg=black,bg=black!20}
-
-\setbeamercolor*{block body}{fg=black,bg=black!10}
-\setbeamercolor*{block body alerted}{fg=black,bg=black!10}
-\setbeamercolor*{block body example}{fg=black,bg=black!10}
-
-\setbeamercolor*{separation line}{}
-\setbeamercolor*{fine separation line}{}
 
 \mode
 <all>
